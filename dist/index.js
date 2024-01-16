@@ -4,11 +4,12 @@ const form = document.querySelector("form");
 const container = document.querySelector(".container");
 const total = document.querySelector(".total");
 function toggleError(id, show, text) {
-    var _a, _b;
-    const elem = (_b = (_a = document
-        .querySelector(`input[id="${id}"]`)) === null || _a === void 0 ? void 0 : _a.closest("label")) === null || _b === void 0 ? void 0 : _b.querySelector(".error");
+    const elem = document
+        .querySelector(`input[id="${id}"]`)
+        ?.closest("label")
+        ?.querySelector(".error");
     if (elem) {
-        elem === null || elem === void 0 ? void 0 : elem.classList[show ? "add" : "remove"]("show");
+        elem?.classList[show ? "add" : "remove"]("show");
         if (text !== undefined || text !== null) {
             elem.innerHTML = text;
         }

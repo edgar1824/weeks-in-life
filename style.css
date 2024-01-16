@@ -60,7 +60,7 @@ button {
 
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--box-w));
-  gap: calc(var(--box-w) / 2 * 1.2);
+  gap: calc(var(--box-w) / 2.5);
   justify-items: center;
   justify-content: space-between;
 }
