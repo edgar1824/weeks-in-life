@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculate Weeks of Life</title>
+  </head>
+  <body>
+    <main>
+      <form>
+        <label for="birth-date">
+          <span>Birth Date</span>
+          <input type="date" id="birth-date" name="birth-date" />
+          <span class="error">Required</span>
+        </label>
+        <label for="max-age">
+          <span>Max Age</span>
+          <input type="number" id="max-age" name="max-age" />
+          <span class="error">Required</span>
+        </label>
+        <button type="submit">Calculate</button>
+      </form>
+      <span class="total"></span>
+      <div class="container"></div>
+    </main>
+
+    <script src="./dist/index.js"></script>
+  </body>
+</html>

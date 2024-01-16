@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --box-w: clamp(8px, 2vw, 14px);
+  --box-h: clamp(8px, 2vw, 14px);
+}
+
+body {
+  padding: 12px;
+}
+main {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+label {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  gap: 4px;
+}
+input {
+  width: 100%;
+  border: 1px solid;
+  padding: 4px 8px;
+  outline: none;
+}
+.error {
+  color: red;
+  grid-column-start: 2;
+  display: none;
+}
+.error.show {
+  display: block;
+}
+button {
+  padding: 8px 4px;
+  margin: 8px 0;
+}
+
+.total {
+  font-size: 20px;
+}
+
+.container {
+  border: solid 1px;
+  padding: 12px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--box-w));
+  gap: calc(var(--box-w) / 2 * 1.2);
+  justify-items: center;
+  justify-content: space-between;
+}
+.container:empty {
+  border: none;
+}
+
+.box {
+  border: 1px solid;
+  width: var(--box-w);
+  height: var(--box-h);
+}
+.box.past {
+  background: gray;
+}
