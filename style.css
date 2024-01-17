@@ -7,8 +7,10 @@
 }
 
 :root {
-  --box-w: clamp(8px, 2vw, 14px);
-  --box-h: clamp(8px, 2vw, 14px);
+  --week-w: clamp(8px, 2vw, 14px);
+  --week-h: clamp(8px, 2vw, 14px);
+  --week-p: 2px;
+  --weeks-row-length: 24;
 }
 
 body {
@@ -59,8 +61,11 @@ button {
   padding: 12px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, var(--box-w));
-  gap: calc(var(--box-w) / 2.5);
+  grid-template-columns: repeat(
+    var(--weeks-row-length),
+    calc(var(--week-w) + (var(--week-p) * 2))
+  );
+  /* gap: calc(var(--week-w) / 2.5); */
   justify-items: center;
   justify-content: space-between;
 }
@@ -68,11 +73,31 @@ button {
   border: none;
 }
 
-.box {
-  border: 1px solid;
-  width: var(--box-w);
-  height: var(--box-h);
+.week-wrapper {
+  padding: var(--week-p);
+  width: calc(var(--week-w) + (var(--week-p) * 2));
+  height: calc(var(--week-h) + (var(--week-p) * 2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.box.past {
-  background: gray;
+.week-wrapper .weeks-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  color: gray;
+  font-size: 14px;
+}
+.week {
+  flex-shrink: 0;
+  border: 0.1px solid lightgray;
+  width: var(--week-w);
+  height: var(--week-h);
+  font-size: 10px;
+}
+.week.past {
+  background: lightgray;
 }
