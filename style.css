@@ -17,7 +17,7 @@ body {
   padding: 12px;
 }
 main {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -59,15 +59,13 @@ button {
 .container {
   border: solid 1px;
   padding: 12px;
-
   display: grid;
   grid-template-columns: repeat(
     var(--weeks-row-length),
     calc(var(--week-w) + (var(--week-p) * 2))
   );
-  /* gap: calc(var(--week-w) / 2.5); */
-  justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  justify-items: stretch;
 }
 .container:empty {
   border: none;
@@ -75,8 +73,6 @@ button {
 
 .week-wrapper {
   padding: var(--week-p);
-  width: calc(var(--week-w) + (var(--week-p) * 2));
-  height: calc(var(--week-h) + (var(--week-p) * 2));
   display: flex;
   align-items: center;
   justify-content: center;
